@@ -211,19 +211,27 @@ public class EffectiveSortsFull
 		}
 	}
 
-	public static void HeapSort(int[] arr) 
-	{
-		HeapSort(arr, 0, arr.length - 1);
-	}
-
-
 	public static void HeapSort(int[] arr, int begin, int end) 
 	{
 		for (int i = begin; i < end; i++)
 		{
 			arr[i] = arr[i - begin];
 		}
-    }
+	}
+	
+	public static void HeapSort(int[] arr)
+	{
+		int len = arr.length;
+		for (int i = len / 2-1; i >= 0; i--)
+		{
+			heapify(arr, len, i);
+		}
+		for (int i = len - 1; i >= 0; i--)
+		{
+			swap(arr, 0, i);
+			heapify(arr, i, 0);
+		}
+	}
 
 	private static void heapify(int[] arr, int len, int idx) 
 	{
