@@ -1,1 +1,1 @@
-# Full pants of Java
+# ПРоекты на Java за время обучения
